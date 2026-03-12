@@ -1,0 +1,101 @@
+[
+  {
+    "description": "nil",
+    "timestamp": 0,
+    "payload_hex": "00000000000000000000000000000000",
+    "raw_hex": "0000000000000000000000000000000000000000",
+    "string": "000000000000000000000000000",
+    "next_string": "000000000000000000000000001",
+    "prev_string": "aWgEPTl1tmebfsQzFP4bxwgy80V"
+  },
+  {
+    "description": "max",
+    "timestamp": 4294967295,
+    "payload_hex": "ffffffffffffffffffffffffffffffff",
+    "raw_hex": "ffffffffffffffffffffffffffffffffffffffff",
+    "string": "aWgEPTl1tmebfsQzFP4bxwgy80V",
+    "next_string": "000000000000000000000000000",
+    "prev_string": "aWgEPTl1tmebfsQzFP4bxwgy80U"
+  },
+  {
+    "description": "standard",
+    "timestamp": 95004740,
+    "payload_hex": "669f7efd7b6fe812278486085878563d",
+    "raw_hex": "05a9a844669f7efd7b6fe812278486085878563d",
+    "string": "0o5sKzFDBc56T8mbUP8wH1KpSX7",
+    "next_string": "0o5sKzFDBc56T8mbUP8wH1KpSX8",
+    "prev_string": "0o5sKzFDBc56T8mbUP8wH1KpSX6"
+  },
+  {
+    "description": "zero_payload",
+    "timestamp": 95004740,
+    "payload_hex": "00000000000000000000000000000000",
+    "raw_hex": "05a9a84400000000000000000000000000000000",
+    "string": "0o5sKw7Z4xnYVLXEmaUv9lxG0C8",
+    "next_string": "0o5sKw7Z4xnYVLXEmaUv9lxG0C9",
+    "prev_string": "0o5sKw7Z4xnYVLXEmaUv9lxG0C7"
+  },
+  {
+    "description": "max_payload",
+    "timestamp": 95004740,
+    "payload_hex": "ffffffffffffffffffffffffffffffff",
+    "raw_hex": "05a9a844ffffffffffffffffffffffffffffffff",
+    "string": "0o5sL3ud7B3uapD0WkI3wf4VhoF",
+    "next_string": "0o5sL3ud7B3uapD0WkI3wf4VhoG",
+    "prev_string": "0o5sL3ud7B3uapD0WkI3wf4VhoE"
+  },
+  {
+    "description": "epoch_with_pattern",
+    "timestamp": 0,
+    "payload_hex": "0123456789abcdef0123456789abcdef",
+    "raw_hex": "000000000123456789abcdef0123456789abcdef",
+    "string": "000000296tiiBb3U904RIpygpjj",
+    "next_string": "000000296tiiBb3U904RIpygpjk",
+    "prev_string": "000000296tiiBb3U904RIpygpji"
+  },
+  {
+    "description": "max_int32_deadbeef",
+    "timestamp": 2147483647,
+    "payload_hex": "deadbeefdeadbeefdeadbeefdeadbeef",
+    "raw_hex": "7fffffffdeadbeefdeadbeefdeadbeefdeadbeef",
+    "string": "IGL7CirdbzjSOihuGRwhdVqH3mh",
+    "next_string": "IGL7CirdbzjSOihuGRwhdVqH3mi",
+    "prev_string": "IGL7CirdbzjSOihuGRwhdVqH3mg"
+  },
+  {
+    "description": "zero_ts_deadbeef",
+    "timestamp": 0,
+    "payload_hex": "deadbeefdeadbeefdeadbeefdeadbeef",
+    "raw_hex": "00000000deadbeefdeadbeefdeadbeefdeadbeef",
+    "string": "000006mBhJfVeGABNuCXRQc2hOZ",
+    "next_string": "000006mBhJfVeGABNuCXRQc2hOa",
+    "prev_string": "000006mBhJfVeGABNuCXRQc2hOY"
+  },
+  {
+    "description": "max_ts_pattern",
+    "timestamp": 4294967295,
+    "payload_hex": "abcdef0123456789abcdef0123456789",
+    "raw_hex": "ffffffffabcdef0123456789abcdef0123456789",
+    "string": "aWgEPRC9f9y39AiMcAMCXnpvSIr",
+    "next_string": "aWgEPRC9f9y39AiMcAMCXnpvSIs",
+    "prev_string": "aWgEPRC9f9y39AiMcAMCXnpvSIq"
+  },
+  {
+    "description": "go_nil_constant",
+    "timestamp": 0,
+    "payload_hex": "00000000000000000000000000000000",
+    "raw_hex": "0000000000000000000000000000000000000000",
+    "string": "000000000000000000000000000",
+    "next_string": "000000000000000000000000001",
+    "prev_string": "aWgEPTl1tmebfsQzFP4bxwgy80V"
+  },
+  {
+    "description": "go_max_constant",
+    "timestamp": 4294967295,
+    "payload_hex": "ffffffffffffffffffffffffffffffff",
+    "raw_hex": "ffffffffffffffffffffffffffffffffffffffff",
+    "string": "aWgEPTl1tmebfsQzFP4bxwgy80V",
+    "next_string": "000000000000000000000000000",
+    "prev_string": "aWgEPTl1tmebfsQzFP4bxwgy80U"
+  }
+]

@@ -1,0 +1,59 @@
+name: Go Compatibility
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+  schedule:
+    - cron: "0 8 * * 3" # Weekly on Wednesdays at 8 AM UTC
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  go-compat:
+    name: Go Cross-Validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.21"
+
+      - name: Generate fresh test vectors from Go reference implementation
+        working-directory: tests/go
+        run: |
+          go mod tidy
+          go run main.go > ../go_vectors_live.json
+          echo "Generated $(cat ../go_vectors_live.json | python3 -c 'import json,sys; print(len(json.load(sys.stdin)))') test vectors from Go"
+
+      - name: Validate Rust against Go vectors
+        run: cargo test --test go_compat -- --nocapture
+
+      - name: Validate static vectors match Go output
+        run: |
+          # Compare the deterministic vectors (skip random ones)
+          python3 -c "
+          import json
+          live = {v['description']: v for v in json.load(open('tests/go_vectors_live.json'))}
+          static = {v['description']: v for v in json.load(open('tests/go_vectors.json'))}
+          mismatches = 0
+          for desc, sv in static.items():
+              if desc not in live:
+                  print(f'WARN: {desc} not in live vectors')
+                  continue
+              lv = live[desc]
+              for key in ['string', 'next_string', 'prev_string', 'raw_hex']:
+                  if sv[key] != lv[key]:
+                      print(f'MISMATCH {desc}.{key}: static={sv[key]} live={lv[key]}')
+                      mismatches += 1
+          if mismatches > 0:
+              print(f'{mismatches} mismatches found — update tests/go_vectors.json')
+              exit(1)
+          print('All static vectors match live Go output')
+          "
